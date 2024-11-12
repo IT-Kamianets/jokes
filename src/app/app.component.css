@@ -1,20 +1,65 @@
-.joke-generator {
-    text-align: center;
-    margin-top: 20px;
+/* Загальний стиль сторінки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Контейнер для всього контенту */
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Стиль заголовку */
+.header h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Стиль кнопки */
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     border: none;
     background-color: #4CAF50;
     color: white;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-p {
-    font-size: 18px;
+button:hover {
+    background-color: #45a049;
+}
+
+/* Стиль блока для жарту */
+.joke-box {
     margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#jokeDisplay {
+    font-size: 20px;
     color: #333;
 }
