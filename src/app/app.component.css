@@ -1,0 +1,20 @@
+.joke-generator {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
