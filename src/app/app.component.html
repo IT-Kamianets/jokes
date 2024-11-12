@@ -2,3 +2,17 @@
   <button id="jokeButton">Згенерувати жарт</button>
   <p id="jokeDisplay">Натисніть кнопку, щоб отримати жарт!</p>
 </div>
+
+<script>
+  document.getElementById("jokeButton").addEventListener("click", function() {
+      fetch("https://webart.work/api/kpnu/joke")
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById("jokeDisplay").innerText = data.joke || "Не вдалося отримати жарт.";
+          })
+          .catch(error => {
+              document.getElementById("jokeDisplay").innerText = "Помилка при завантаженні жарту.";
+              console.error("Error fetching joke:", error);
+          });
+  });
+</script>
