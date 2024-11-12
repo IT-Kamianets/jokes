@@ -1,29 +1,7 @@
 <div class="container">
-  <div class="header">
-      <h1>Генератор жартів</h1>
-  </div>
-  <div class="joke-generator">
-      <button id="jokeButton">Згенерувати жарт</button>
-      <div class="joke-box">
-          <p id="jokeDisplay">Натисніть кнопку, щоб отримати жарт!</p>
-      </div>
+  <h1>{{ title }}</h1>
+  <button (click)="getJoke()">Згенерувати жарт</button>
+  <div class="joke-box">
+    <p>{{ joke }}</p>
   </div>
 </div>
-
-<script>
-  // Перевіряємо, чи завантажився DOM перед додаванням події
-  document.addEventListener("DOMContentLoaded", function() {
-      const jokeButton = document.getElementById("jokeButton");
-      jokeButton.addEventListener("click", function() {
-          fetch("https://webart.work/api/kpnu/joke")
-              .then(response => response.json())
-              .then(data => {
-                  document.getElementById("jokeDisplay").innerText = data.joke || "Не вдалося отримати жарт.";
-              })
-              .catch(error => {
-                  document.getElementById("jokeDisplay").innerText = "Помилка при завантаженні жарту.";
-                  console.error("Error fetching joke:", error);
-              });
-      });
-  });
-</script>
