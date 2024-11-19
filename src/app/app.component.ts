@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   joke: string = 'Натисніть кнопку, щоб отримати жарт!';
@@ -23,3 +26,7 @@ export class AppComponent {
     );
   }
 }
+
+bootstrapApplication(AppComponent, {
+  providers: [provideHttpClient()],
+}).catch((err) => console.error(err));
