@@ -21,8 +21,8 @@ body {
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 240px;
+  margin-bottom: 200px;
 }
 
 #joke {
@@ -38,8 +38,8 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 160px;
-  margin-top: 200px;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 button:hover {
