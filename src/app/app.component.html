@@ -1,7 +1,20 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  <button (click)="getJoke()">Згенерувати жарт</button>
-  <div class="joke-box">
-    <p>{{ joke }}</p>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жарти з API</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Жарти з API</h1>
+    <button id="generate-joke">Згенерувати жарт</button>
+    <div class="joke-box">
+      <p id="joke">Натисніть кнопку, щоб отримати жарт!</p>
+    </div>
   </div>
-</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

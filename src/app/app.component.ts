@@ -1,26 +1,16 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+document.getElementById('generate-joke').addEventListener('click', async () => {
+  const jokeBox = document.getElementById('joke');
+  jokeBox.textContent = 'Завантаження...';
 
-@Component({
-  selector: 'app-joke',
-  templateUrl: './joke.component.html',
-  styleUrls: ['./joke.component.css']
-})
-export class JokeComponent {
-  title = 'Жарти з API';
-  joke = 'Натисніть кнопку, щоб отримати жарт!';
+  try {
+    const response = await fetch('https://webart.work/api/kpnu/joke');
+    if (!response.ok) {
+      throw new Error('Помилка отримання жарту');
+    }
 
-  constructor(private http: HttpClient) {}
-
-  getJoke() {
-    const apiUrl = 'https://webart.work/api/kpnu/joke';
-    this.http.get<{ joke: string }>(apiUrl).subscribe({
-      next: (response) => {
-        this.joke = response.joke;
-      },
-      error: () => {
-        this.joke = 'Не вдалося завантажити жарт. Спробуйте ще раз!';
-      }
-    });
+    const data = await response.json();
+    jokeBox.textContent = data.joke;
+  } catch (error) {
+    jokeBox.textContent = 'Не вдалося завантажити жарт. Спробуйте ще раз!';
   }
-}
+});
