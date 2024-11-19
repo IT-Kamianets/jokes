@@ -35,4 +35,4 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('p')?.textContent).toContain('Це випадковий жарт!');
   });
-});
+});.
