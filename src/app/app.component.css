@@ -3,7 +3,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 100;
   display: flex;
   justify-content: center;  /* Центруємо по горизонталі */
   align-items: center;      /* Центруємо по вертикалі */
@@ -21,8 +21,8 @@ body {
 }
 
 h1 {
-  font-size: 240px;
-  margin-bottom: 200px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 #joke {
