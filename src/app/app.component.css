@@ -3,11 +3,11 @@ body {
   background-color: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 100;
+  padding: 0;
   display: flex;
   justify-content: center;  /* Центруємо по горизонталі */
   align-items: center;      /* Центруємо по вертикалі */
-  height: 100vh;            /* Висота екрану */
+  height: 1000vh;            /* Висота екрану */
 }
 
 .container {
