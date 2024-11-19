@@ -1,22 +1,18 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jokes';
   joke: string = 'Натисніть кнопку, щоб отримати жарт!';
 
   constructor(private http: HttpClient) {}
 
   getJoke() {
-    this.http.get<any>('https://webart.work/api/kpnu/joke').subscribe(
+    this.http.get<{ joke: string }>('https://webart.work/api/kpnu/joke').subscribe(
       (data) => {
         this.joke = data.joke || 'Не вдалося отримати жарт.';
       },
