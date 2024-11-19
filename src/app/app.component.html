@@ -1,5 +1,23 @@
-<div class="container">
-  <h1>Генератор жартів</h1>
-  <p id="joke">{{ joke }}</p>
-  <button (click)="getJoke()">Отримати жарт</button>
-</div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор жартів</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Генератор жартів</h1>
+    <p id="joke">Тільки приїхав з відпустки, а вже треба брати іншу, щоб відпочити від попередньої.</p>
+    <button onclick="generateJoke()">Отримати жарт</button>
+  </div>
+
+  <script>
+    function generateJoke() {
+      // Сюди можна додати генерацію жартів
+      document.getElementById("joke").textContent = "Новий жарт!";
+    }
+  </script>
+</body>
+</html>
