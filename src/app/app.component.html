@@ -1,3 +1,7 @@
-<h1>Hello, {{ title }}</h1>
-<button (click)="onButtonClick()">Натисни мене</button>
-<p *ngIf="joke">{{ joke }}</p>
+<div class="container">
+  <h1>{{ title }}</h1>
+  <button (click)="getJoke()">Згенерувати жарт</button>
+  <div class="joke-box">
+    <p>{{ joke }}</p>
+  </div>
+</div>
