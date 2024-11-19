@@ -22,7 +22,7 @@ export class AppComponent {
         },
         (error) => {
           console.error('Error fetching joke:', error);
-          this.joke = 'Помилка при завантаженні жарту.';
+          this.joke = 'Помилкапри завантаженні жарту.';
         }
       );
   }
