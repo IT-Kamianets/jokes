@@ -1,29 +1,26 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-joke',
+  templateUrl: './joke.component.html',
+  styleUrls: ['./joke.component.css']
 })
-export class AppComponent {
-  title = 'jokes';
-  joke: string = 'Натисніть кнопку, щоб отримати жарт!';
+export class JokeComponent {
+  title = 'Жарти з API';
+  joke = 'Натисніть кнопку, щоб отримати жарт!';
 
   constructor(private http: HttpClient) {}
 
   getJoke() {
-    this.http.get<any>('https://webart.work/api/kpnu/joke').subscribe(
-      (data) => {
-        this.joke = data.joke || 'Не вдалося отримати жарт.';
+    const apiUrl = 'https://webart.work/api/kpnu/joke';
+    this.http.get<{ joke: string }>(apiUrl).subscribe({
+      next: (response) => {
+        this.joke = response.joke;
       },
-      (error) => {
-        console.error('Error fetching joke:', error);
-        this.joke = 'Помилка при завантаженні жарту.';
+      error: () => {
+        this.joke = 'Не вдалося завантажити жарт. Спробуйте ще раз!';
       }
-    );
+    });
   }
 }
