@@ -5,9 +5,9 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: center;  /* Центруємо по горизонталі */
+  align-items: center;      /* Центруємо по вертикалі */
+  height: 100vh;            /* Висота екрану */
 }
 
 .container {
@@ -16,8 +16,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+  max-width: 400px;         /* Максимальна ширина контейнера */
+  width: 100%;              /* Ширина контейнера займає всю доступну ширину */
 }
 
 h1 {
@@ -35,12 +35,12 @@ button {
   background-color: #007bff;
   color: #ffffff;
   border: none;
-  padding: 10px 20px; /* Виправлено padding: 10x 20px на правильне значення */
+  padding: 10px 20px;  /* Виправлено padding */
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin: 20px auto;  /* Центруємо кнопку з відступами зверху та знизу */
-  display: block;  /* Перетворюємо кнопку на блочний елемент */
+  margin-top: 20px;    /* Додаємо відступ з верхньої частини */
+  display: inline-block;  /* Залишаємо кнопку блочним елементом для центрування */
 }
 
 button:hover {
