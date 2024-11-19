@@ -1,16 +1,15 @@
-document.getElementById('generate-joke').addEventListener('click', async () => {
-  const jokeBox = document.getElementById('joke');
-  jokeBox.textContent = 'Завантаження...';
+import { Component } from '@angular/core';
 
-  try {
-    const response = await fetch('https://webart.work/api/kpnu/joke');
-    if (!response.ok) {
-      throw new Error('Помилка отримання жарту');
-    }
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'jokes';
+  joke: string | null = null;
 
-    const data = await response.json();
-    jokeBox.textContent = data.joke;
-  } catch (error) {
-    jokeBox.textContent = 'Не вдалося завантажити жарт. Спробуйте ще раз!';
+  onButtonClick(): void {
+    this.joke = 'Це випадковий жарт!';
   }
-});
+}
